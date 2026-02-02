@@ -1,0 +1,50 @@
+\documentclass[12pt,ifthen]{article}
+\usepackage{url}
+\usepackage{comment}
+
+\newif{\ifshowsoln}
+% \showsolntrue
+
+\newcommand{\und}{\_\_\_\_\_\_\_\_\_}
+\newcommand{\Z}{\mathbb{Z}}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\begin{document}
+
+{\bf Discussion Notes 2/2/2026
+
+CMSC250H
+
+\vspace{1 cm}
+}
+
+{\bf A Truth Table Relating Variables P, Q, and R:}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \bf p & \bf q & \bf r & $ \bf q \rightarrow \bf r $ & $ \bf p \vee (\bf q \rightarrow \bf r) $ \\
+        \hline
+        F & F & F & T & T \\
+        \hline
+        F & F & T & T & T \\
+        \hline
+        F & T & T & T & T \\
+        \hline
+        F & T & F & F & F \\
+        \hline
+        T & T & T & T & T \\
+        \hline
+        T & T & F & F & T \\ 
+        \hline
+        T & F & F & T & T \\
+        \hline
+        T & F & T & T & T \\
+        \hline
+    \end{tabular}
+\end{center}
+
+{ We also covered many different logic puzzles, focusing on trying to decipher who was lying and who wasn't when both were telling different statements.}
+
+\end{document}
