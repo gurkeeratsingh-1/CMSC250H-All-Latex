@@ -19,4 +19,59 @@ CMSC250H
 \vspace{1 cm}
 }
 
+\textbf{Logical Equivalence Practice}
+\begin{enumerate}
+    \item $ p \wedge (q \vee r) \equiv (p \wedge q) \vee (p \wedge r)$
+    \begin{itemize}
+        \item P can be distributed with an $ \wedge $ to each variable inside the parentheses, creating $ (p \wedge q) \vee (p \wedge r)$
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                \bf p & \bf q & \bf r & $\bf q \vee \bf r$ & $\bf p \wedge (\bf q \vee \bf r)$ \\
+                \hline
+                T & T & T & T & T  \\
+                \hline
+                T & T & F & T & T  \\
+                \hline
+                T & F & F & F & F  \\
+                \hline
+                T & F & T & T & T \\
+                \hline
+            \end{tabular}
+        \end{center}
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Circuits + Statements}
+\begin{enumerate}
+    \item Inputs p,q,r: Outputs 1 iff p and q have the same value and q and r have opposite values
+    \begin{itemize}
+        \item $ [ (\thicksim p  \wedge \thicksim q) \vee (p \wedge q)] \wedge [(q\wedge \thicksim r) \vee (\thicksim q \wedge r)]$
+        \item $\thicksim [p \bigoplus q] \wedge [q \bigoplus r]$
+    \end{itemize}
+    \item A room has an alarm controlled by three switches. To start the alarm, two of the switches must be on, otherwise the system is disabled
+    \begin{itemize}
+        \item Variables: p, q, r
+        \item $(p \wedge q) \vee (q \wedge r) \vee (p \wedge r)$
+    \end{itemize}
+    \item $(p \wedge q) \vee (\thicksim p \wedge q) \vee (\thicksim p \wedge \thicksim q) \leq $ Two Gates
+        \begin{itemize}
+            \item $(p \wedge q) \vee (\thicksim p \wedge q) \rightarrow q$
+            \item $q \vee (\thicksim p \wedge \thicksim q) \rightarrow q \vee \thicksim p$
+        \end{itemize}
+\end{enumerate}
+
+\textbf{Logical Equivalence Using Inference}
+\begin{enumerate}
+    \item $(\thicksim p \vee \thicksim q) \vee (\thicksim p \wedge \thicksim q) \equiv \thicksim p$
+\end{enumerate}
+
+\textbf{The $\wedge$ of Two $\leq$ Statements}
+\begin{itemize}
+    \item You can largely generalize statements to fulfill all stipulations.
+    \item For example, x $\leq$ each number of a set is the same as x $\leq$ smallest number of the set 
+\end{itemize}
+
+
+
 \end{document}
