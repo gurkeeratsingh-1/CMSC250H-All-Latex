@@ -12,6 +12,54 @@
 
 \begin{document}
 
-\bf{Tester!}
+{\textbf Lecture Notes 2/2/2026
+
+CMSC250H
+
+\vspace{1 cm}
+}
+\textbf{Circuits}
+
+\begin{itemize}
+   \item Gates are expensive, so it's in our best interest to make them cheaper and more simplified
+   \begin{itemize}
+    \item For example, use DeMorgan's Law to simplify gates
+   \end{itemize}
+   \item We want to build circuits that add arbitrarily large binary numbers
+   \begin{itemize}
+    \item e.g 10011001 + 00110011 = 11001100
+   \end{itemize} 
+   \item A half-adder is a circuit that adds two bits together!
+   \begin{itemize}
+    \item e.g X + Y = CS, where CS is the carry bit
+    \item We can treat the half-adder as an abstraction since we already know how to build it.
+   \end{itemize}
+   \item Exclusive or(XOR): one or other, but not both
+   \item $\oplus$ is the XOR gate
+   \item A Full-Adder can compute the sum of two 2-digit binary numbers.
+   \begin{itemize}
+    \item We need the ability to add 3 digits because a C might carry over from the largest digit addition
+    \item This circuit that can add 3 bits is a full-adder.
+    \item These can also be abstracted.
+    \item Finally, we can connect the Half-Adder and its new inputs to the Full-Adder to produce the final circuit.
+   \end{itemize}
+   \item To construct an n-bit adder, we have n-1 full adders
+   \item There are circuits for addition, multiplication, division, and a primality test, along with more.
+\end{itemize}
+\vspace{0.9cm}
+\textbf{Intermediary Truth Values} 
+\begin{itemize}
+    \item In math, statements are usually true or false (1 or 0)
+    \item But we want truth values between 0 and 1. Like the chance that it rains tomorrow, which is a probability.
+    \item $\wedge$ can be defined as xy, and $\vee$ can be defined as x+y-xy. $\neg$ can be defined as 1-x or 1-y.
+    \item Another way to define $\wedge$ is min(x,y), while $\vee$ can be defined as max(x,y).
+\end{itemize}
+
+\textbf{To-Do After Class: }
+\begin{itemize}
+    \item Look at the actual construction of half-adders and full-adders.
+\end{itemize}
+
+
 
 \end{document}

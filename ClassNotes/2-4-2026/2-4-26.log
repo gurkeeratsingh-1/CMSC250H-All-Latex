@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/gurkeeratsingh/Desktop/CMSC250H/ClassNotes/2-3-2026/2-3-26.tex
-(/Users/gurkeeratsingh/Desktop/CMSC250H/ClassNotes/2-3-2026/2-3-26.tex
+**/Users/gurkeeratsingh/Desktop/CMSC250H/ClassNotes/2-4-2026/2-4-26.tex
+(/Users/gurkeeratsingh/Desktop/CMSC250H/ClassNotes/2-4-2026/2-4-26.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -110,8 +110,8 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [ifthen].
 
-(./2-3-26.aux)
-\openout1 = `2-3-26.aux'.
+(./2-4-26.aux)
+\openout1 = `2-4-26.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -127,43 +127,29 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+
 
 [1
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (1.07808pt too wide) in paragraph at lines 55--56
-[]\OT1/cmr/m/n/12 Another way to de-fine $\OMS/cmsy/m/n/12 ^$ \OT1/cmr/m/n/12 is min(x,y), while $\OMS/cmsy/m/n/12 _$ \OT1/cmr/m/n/12 can be de-fined as max(x,y). 
- []
-
-
-
-[2] (./2-3-26.aux)
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./2-4-26.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1833 strings out of 473190
- 26041 string characters out of 5715801
- 416247 words of memory out of 5000000
- 25112 multiletter control sequences out of 15000+600000
- 564126 words of font info for 56 fonts, out of 8000000 for 9000
+ 1779 strings out of 473190
+ 25208 string characters out of 5715801
+ 409247 words of memory out of 5000000
+ 25079 multiletter control sequences out of 15000+600000
+ 559442 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,5n,65p,294b,181s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on 2-3-26.pdf (2 pages, 50205 bytes).
+ 56i,5n,65p,294b,113s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on 2-4-26.pdf (1 page, 20568 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 18 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
