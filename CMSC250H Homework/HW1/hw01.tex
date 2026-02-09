@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\begin{document}
+
+\centerline{\textbf{Gurkeerat Singh}}
+
+
+\centerline{Homework 01, MORALLY Due Feb 10}
+\newcommand{\implies}{\Rightarrow}
+
+(The last question IS honors HW 01 and graded separatel but handed in
+with this HW.) 
+
+
+\begin{enumerate}
+
+\item
+(0 points)
+When is the midterm (give date and time)?
+If you cannot take the midterm on that day then tell 
+Professor Gasarch by Feb 10. 
+\begin{itemize}
+    \item \textbf{The midterm is on March 31st, 2025. Since it's in class it'll go from 9:30 to 10:45 A.M.}
+\end{itemize}
+
+\bigskip
+
+\newpage
+
+\item
+(40 points)
+\begin{enumerate}
+\item 
+(20 points)
+Give a Propositional Formula on four variables that has exactly
+three satisfying assignments.
+Give the satisfying assignments.
+\textbf {A formula on 4 variables that has exactly 3 satisfying assignments is $ (a \wedge b \wedge (c \vee d)) $. The 3 satisfying assignements would look like this:}
+\begin{itemize}
+    \item A = \textbf{TRUE}, B = \textbf{TRUE}, C = \textbf{TRUE}, D = \textbf{TRUE}
+    \item A = \textbf{TRUE}, B = \textbf{TRUE}, C = \textbf{TRUE}, D = \textbf{FALSE}
+    \item A = \textbf{TRUE}, B = \textbf{TRUE}, C = \textbf{FALSE}, D = \textbf{TRUE}
+\end{itemize}
+
+
+\bigskip
+
+\item 
+(20 points)
+Give a Propositional Formula on four variables that has exactly
+13 satisfying assignments.
+ADVICE: You could do it in a messy way BUT there is an EASIER way.
+Both are full credit, but try to find the easier way. 
+
+\textbf{Since there are 4 variables, there are a total of 16 input combinations; therefore, an easier way to find this propositional formula, rather than finding 13 satisfying assignments, would be to find 3 assignments that don't satisfy the formula. We already have a formula with 3 satisfying assignments; therefore negating the whole formula would give us 13 satisfying assignments. So $ \neg (a \wedge b \wedge (c \vee d)) $ has 13 satisfying assignments.
+}
+
+\bigskip
+
+\end{enumerate}
+
+\newpage
+
+\item
+(30 points)
+Recall that a {\it 2CNF} formula is of the form 
+
+$$C_1 \wedge \cdots \wedge C_k$$
+
+where each $C_i$ is an $\vee$ of two literals. 
+
+Recall that  {\it 2SAT} is the following problem: Given a 2CNF formula, determine
+if it is satisfiable. 
+
+Recall that I said in class that 2SAT is in P.
+
+\begin{enumerate}
+\item
+(0 points but you need to do this for Part 2)
+Look on the web or ChatGPT or whatever you want for an ALGORITHM that
+solves 2SAT in polynomial time.
+\item
+(30 points) Describe the algorithm in English so that someone who
+can't read code can follow it. (You do not need to show that its in polynomial time.) 
+\begin{itemize}
+    \item \textbf{When we deal with 2SAT, we are dealing with a formula made up of some number of clauses, with each clause having the form $ (x \vee y) $. These clauses are logically equivalent to $ (\neg x \rightarrow y) \wedge (\neg y \rightarrow x)$, giving us two different implications. Since disjunction is commutative, not x would imply y and not y would imply x, meaning that they both work for the clause form. Once this is understood we can create a graph with nodes, giving each variable x two nodes, one x and one $\neg x$. From there we can connect each $\neg a$ to a b, and each $\neg b$ to an a, showing how $\neg a$ implies b and $\neg a$ implies b.
+    Once we are done connecting nodes, look at the most strongly-connected parts - areas where every node can reach every other node in the group. If x and $\neg x$ are in the same area, we know that the formula is unsatisfiable, as both x and $\neg x$ can't be true. If there are none of these scenarios, the formula is SAT.}
+\end{itemize}
+\item
+(0 points and just for your own benefit and part of a long term extra credit problem) 
+Code up the 2SAT algorithm. 
+This is used in every SAT algorithm. I may have an extra credit project in this course
+where you code up a SAT solver. 
+\end{enumerate}
+
+
+\newpage
+
+\item
+(30 points)
+Show that, for all $n\ge 1$, there exists a formula on $n$ variables that is satisfied by
+exactly $n$ satisfying assignments. Give the satisfying assignments.
+(This is NOT by induction. Just give
+the Formula. You may use DOT DOT DOT (that is ``$\dots$") though it should be clear what you mean.)
+
+\begin{itemize}
+    \item \textbf{If we have a function with n variables, a formula that made exactly one variables true and the rest false would have n different satisfying assignments, one variable true for each n. The formula for this would look like this: } \vspace{0.3cm} $$ f(x_1, \dots , x_n) = \bigvee_{i=1}^n \left ( x_i \wedge \bigwedge_{j \ne i} \neg x_j \right)$$ \vspace{0.3cm} 
+    \textbf{This formula ensures that only one x is true at a time. If we have n different x's, there are n different satisfying arguments for this problem.}
+    
+\end{itemize}
+
+\newpage
+\item 
+{\bf Honors HW 1} This is graded separately as Honors HW01.
+
+There are 3 people in a room.
+
+Two are truth tellers.
+
+One is normal (can tell the truth or lie).
+
+They all know about each other. 
+
+Show how by asking them YES-NO questions you can determine which one is the normal. 
+
+\textbf{Let's define 3 people, two truth-tellers and one normal person as persons A, B, and C. We can start by asking person B if person A is normal. If person B says that person A IS normal, either A or B is normal, since B can be a truth-teller and A can be normal, or B can be normal and lie, saying that A is normal. Therefore, we know C is a truth teller and we can ask him if A is normal. His answer (yes leading to B and no leading to A) will help us determine who is normal. In the case person B says that person A IS NOT normal, person B may either be a truth-teller or a normal once again. If person B is a truth-teller, that suggests person C is the normal. Otherwise, person B is the normal, and he's the person we're looking for. So when person B says person A is NOT normal, we turn to person A(a guaranteed truth-teller) to ask if person B is normal, where the answer (yes leads to B and no leads to C) will help us understand who is normal and who isn't.}
+
+\bigskip
+
+\end{enumerate}
+\end{document}
