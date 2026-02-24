@@ -86,6 +86,8 @@ can't read code can follow it. (You do not need to show that its in polynomial t
 \begin{itemize}
     \item \textbf{When we deal with 2SAT, we are dealing with a formula made up of some number of clauses, with each clause having the form $ (x \vee y) $. These clauses are logically equivalent to $ (\neg x \rightarrow y) \wedge (\neg y \rightarrow x)$, giving us two different implications. Since disjunction is commutative, not x would imply y and not y would imply x, meaning that they both work for the clause form. Once this is understood we can create a graph with nodes, giving each variable x two nodes, one x and one $\neg x$. From there we can connect each $\neg a$ to a b, and each $\neg b$ to an a, showing how $\neg a$ implies b and $\neg a$ implies b.
     Once we are done connecting nodes, look at the most strongly-connected parts - areas where every node can reach every other node in the group. If x and $\neg x$ are in the same area, we know that the formula is unsatisfiable, as both x and $\neg x$ can't be true. If there are none of these scenarios, the formula is SAT.}
+    
+    \textbf{I used ChatGPT to help me understand 2SAT and its algorithm.}
 \end{itemize}
 \item
 (0 points and just for your own benefit and part of a long term extra credit problem) 

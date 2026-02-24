@@ -1,0 +1,43 @@
+\documentclass[12pt,ifthen]{article}
+\usepackage{url}
+\usepackage{comment}
+
+\newif{\ifshowsoln}
+% \showsolntrue
+
+\newcommand{\und}{\_\_\_\_\_\_\_\_\_}
+\newcommand{\Z}{\mathbb{Z}}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\begin{document}
+
+{\textbf Discussion Notes 2/9/2026
+
+CMSC250H
+
+\vspace{1 cm}
+}
+
+\textbf{Algorithm Design Techniques}
+\begin{itemize}
+    \item Brute Force Algorithms
+    \begin{itemize}
+        \item Not always efficient because of exponential runtimes
+        \item We get better using heuristics and more efficient design techniques
+    \end{itemize}
+    \item Greedy Algorithms
+    \begin{itemize}
+        \item Each small step is locally optimal and doesn't care about future consequences.
+        \item May be very optimal or may fail because we only look at the next best step, so not guaranteed to bring the best solution.
+    \end{itemize}
+    \item Heuristics
+    \begin{itemize}
+        \item Use some type of rule in order to find the best solution. 
+        \item e.g. For slotting the most classes in a time interval, select the class that finishes first out of a choice of classes. 
+    \end{itemize}
+\end{itemize}
+
+
+
+\end{document}

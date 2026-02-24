@@ -1,0 +1,309 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+
+
+\begin{document}
+
+\centerline{\textbf{Gurkeerat Singh}}
+\centerline{Homework 03, MORALLY Due Feb 24}
+
+\begin{enumerate}
+\item
+(25 points)
+For this problem FIRST write the program and make conjectures THEN
+look up whats true. 
+
+\begin{enumerate}
+\item
+(0 points) 
+Write a program that does the following:
+For every $1\le n\le 5000$:
+\begin{itemize}
+\item
+Using the Dynamic Prog Method (Leo will tell you about that in recitation)
+to determine natural numbers $(x_1,x_2,\ldots,x_k)$ such that 
+$x_1^4 + \cdots + x_k^4=n$, with $k$ as small as possible. 
+\item
+Below I have the some rows of the output (I didn't use the first $x$ rows since they are boring). 
+\end{itemize}
+
+
+\begin{tabular}{|l|l|l|}
+\hline
+ $n$ &  $k$ & $x_i$'s \cr
+\hline
+10           & 10& $10=10\times 1^4$   \cr
+11           & 11& $11=11\times 1^4$ \cr
+12           & 12& $12=12\times 1^4$  \cr
+13           & 13& $13=13\times 1^4$  \cr
+14           & 14& $14=14\times 1^4$  \cr
+15           & 15& $15=14\times 1^4$  \cr
+16           & 1 & $16=1\times 2^4$  \cr
+17           & 2& $17=1\times 2^4 + 1\times 1^4$  \cr
+18           & 3& $18=1\times 2^4+2\times 1^4$  \cr
+19           & 4& $19=1\times 2^4+3\times 1^4$ \cr
+20           & 5& $20=1\times 2^4+4\times 1^4$  \cr
+21           & 6& $21=1\times 2^4+5\times 1^4$  \cr
+22           & 7& $22=1\times 2^4+6\times 1^4$  \cr
+\hline
+\end{tabular}
+
+\bigskip
+
+DO NOT hand in the program or the output. 
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE FOR THE REST OF THIS PROBLEM}
+
+\newpage
+
+\item
+(10 points)
+Create a table that shows how many numbers $\leq 5000$ require 1 fourth-power, 2 fourth-powers, 
+3 powers, and so on.  Below is a sample table (THIS DOES NOT CONTAIN THE CORRECT ANSWER):
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+     \hline  $\# $ of fourth powers\\ \hline
+        1 & 3 & 8 \\
+        2 & 4 & 2 \\
+        3 & 28 & 17 \\
+        \vdots & \vdots &\vdots \\ \hline
+    \end{tabular}
+\end{center}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\textbf{\# of fourth powers ($k$)} & 
+\textbf{\# of integers $\le 5000$ requiring $k$ fourth powers} \\
+\hline
+1 & 8 \\ \hline
+2 & 33 \\ \hline
+3 & 92 \\ \hline
+4 & 195 \\ \hline
+5 & 335 \\ \hline
+6 & 460 \\ \hline
+7 & 513 \\ \hline
+8 & 485 \\ \hline
+9 & 435 \\ \hline
+10 & 396 \\ \hline
+11 & 374 \\ \hline
+12 & 355 \\ \hline
+13 & 347 \\ \hline
+14 & 345 \\ \hline
+15 & 342 \\ \hline
+16 & 196 \\ \hline
+17 & 58 \\ \hline
+18 & 24 \\ \hline
+19 & 7 \\ \hline
+\end{tabular}
+\end{table}
+
+\item 
+(10 points) Based on this data make conjectures of the following forms:
+
+\begin{enumerate}
+\item 
+Every $n$ is the sum of $\le XXX$ fourth powers. 
+Write your conjecture in quantifiers. 
+\begin{itemize}
+    \item \boldmath{$\forall n \in \N \: \exists x_1 \exists x_2 \ldots \exists x_{19} \in \N \: (n = (x_1)^4 + (x_2)^4 \ldots + (x_{19})^4)$}
+\end{itemize}
+\item
+All but a finite number of $n$ is the sum of $\le XXX$ fourth powers. 
+Write your conjecture in quantifiers. 
+\begin{itemize}
+    \item \boldmath{$\exists N \forall n (n > N \rightarrow \exists x_1 \exists x_2 \ldots \exists x_{16} (n = (x_1)^4 + (x_2)^4 \ldots + (x_{16})^4))$}
+\end{itemize}
+\end{enumerate}
+\item
+(5 points) 
+Look on the web and/or use AI to determine what is known and what is conjectured
+about these problems.
+\begin{itemize}
+    \item \textbf{This is a speical case of Waring's Problem, in which Edward Warning determined that for any integer x greater than or equal to 2, there exists a number k such that each natural number can be written as a sum of at most k x'th powers. For our case where x = 4, Hilbert was able to conjecture that this max number k is equal to 19, or that every natural number can be written as a sum of most 19 4th powers. Interestingly enough, the numbers that require 19 4th powers are typically smaller integers, while sufficiently large integers can be written in at most 16 4th powers.}
+\end{itemize}
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+
+
+\item
+(25 points) 
+\begin{enumerate}
+\item
+(10 points)
+View the input $x,y,z$ as the number in binary $xyz$ which we denote $(xyz)$. 
+For example, $100$ is 4. 
+
+Write a Truth Table for the following function with 3 inputs $x,y,z$ and 1 outputs $b$. 
+
+\begin{equation*}
+f(x,y,z) = 
+\begin{cases}
+0  & \hbox{if $(xyz)$ is NOT PRIME.} \cr
+1  & \hbox{if $(xyz)$ is PRIME.} \cr
+\end{cases}
+\end{equation*} 
+
+(NOTE: 0 and 1 are NOT primes. We will discuss this more carefully later.) 
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+     \hline
+     \textbf{x}& \textbf{y} & \textbf{z}& \textbf{f(x,y,z)} \\
+     \hline
+     0 & 0 & 0 & 0 \\ 
+     0 & 0 & 1 & 0 \\ 
+     0 & 1 & 0 & 1 \\ 
+     0 & 1 & 1 & 1 \\ 
+     1 & 0 & 0 & 0 \\
+     1 & 0 & 1 & 1 \\ 
+     1 & 1 & 0 & 0 \\ 
+     1 & 1 & 1 & 1 \\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+\item
+(15 points) 
+Convert your truth table into formulas and give it to us. 
+DO NOT SIMPLIFY.
+\begin{itemize}
+    \item \boldmath $(y \wedge \neg(x \vee z)) \vee (y \wedge z \wedge \neg x) \vee (x \wedge z \wedge \neg y) \vee (x \wedge y \wedge z)$ 
+\end{itemize}
+
+\item
+(0 points- DO NOT HAND IN)
+Draw a circuit that computes that truth table. 
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item
+(25 points)
+(In this problem we will guide you through a proof that $N(\alpha\beta)=N(\alpha)N(\beta)$.)
+
+\newcommand{\ov}[1]{\overline{#1}}
+
+Let $d\in\Z$ and $d\ge 2$. Let $\D_d = \{ a+b\sqrt{d} \colon a,b\in\Z\}$. 
+
+Let $\alpha\in \D_d$, $\alpha = a+b\sqrt{d}$. Let $\ov \alpha = a-b\sqrt{d}$. 
+
+Let $N(\alpha)=\alpha\ov \alpha$. By calculation $N(\alpha)= (a+b\sqrt{d})(a-b\sqrt{d})=a^2-db^2.$
+
+For the questions below let $\alpha=a+b\sqrt{d}$ and $\beta = e+f\sqrt{d}$. 
+
+\begin{enumerate}
+\item
+(0 points-Do Not Hand In Anything)
+What is $\ov{\alpha\beta}$ in terms of $a,b,d,e,f$. 
+\item
+(0 points-Do Not Hand In Anything)
+What is $\ov \alpha \ov \beta $ in terms of $a,b,d,e,f$. 
+\item
+(0 points-Do Not Hand In Anything)
+If you did part a a and b correctly then you showed that
+$$\ov{\alpha\beta}=\ov \alpha  \ov \beta .$$
+
+\item
+(25 points) 
+Show that $N(\alpha\beta)=N(\alpha)N(\beta)$
+
+Hint1: Use $N(x)=x\ov x$. 
+
+Hint2: Use $\ov{\alpha\beta}=\ov{\alpha}\ov{\beta}$. 
+
+Hint3: Do not use $a,b,d,e,f$. 
+
+\end{enumerate}
+
+\boldmath{\bf Prove that $N(\alpha\beta) = N(\alpha)N(\beta)$}
+\begin{itemize}
+    \item \boldmath{$N(\alpha\beta) = \alpha\beta\ov{\alpha\beta}$} by Hint 1
+    \item \boldmath{$\alpha\beta\ov{\alpha\beta} = \alpha\beta\ov\alpha\ov\beta$} by Hint 2
+    \item \boldmath{$\alpha\beta\ov\alpha\ov\beta = \alpha\ov\alpha\beta\ov\beta$} by commutativity and associativity
+    \item \boldmath{$\alpha\ov\alpha\beta\ov\beta = N(\alpha)N(\beta)$} by definition of function N
+\end{itemize}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE} 
+
+\newpage
+
+
+\item 
+(25 points) 
+Let $\D_d = \{ a+b\sqrt{d} \colon a,b\in\Z\}$
+
+\begin{enumerate}
+\item 
+Give an infinite number of units of $\D_3$. 
+\begin{itemize}
+    \item \boldmath{$(2 + \sqrt3)^n for \, n \in \Z$}
+\end{itemize}
+\item 
+Give an infinite number of units of $\D_5$. 
+\begin{itemize}
+    \item \boldmath{$(9 + 4\sqrt5)^n for \, n \in \Z$}
+\end{itemize}
+
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE} 
+
+\newpage
+
+\item
+(0 point-Extra Credit- Graded separately). 
+
+Consider the following problem:
+
+{\it COUNTSAT: Given a formula $\phi$ determine how many satisfying assignments it has.}
+
+Clearly if COUNTSAT can be solved quickly then SAT can be solved quickly. 
+
+How about the converse? 
+
+Is the following true: If SAT can be solved quickly then COUNTSAT can be solved quickly. 
+\textbf{This is not true.}
+
+LOOK UP what is known about this and give me a WELL WRITTEN writeup of what is known
+including formal definitions and statement of theorems. 
+
+\textbf{SAT inputs a boolean formula and determines if there is a satisfying assignment of the variables to satisfy the formula. It outputs Yes or No. This problem is in the NP complexity class and can be verified in polynomial time, but is NP-complete as every problem in NP reduces to SAT in polynomial time. Similarly, COUNTSAT also inputs a boolean formula, but it determines how many total satisfying arguments there are. Therefore, it has more of a function-type action, compared to returning Y/N. It's part of the complexity class P-Sharp, which counts the numbers of certificates that causes the verifier V to accept. COUNTSAT is much harder than P, because knowing that a solution exists is not enough to confirm how many of those solutions exist, while trying to figure out how many total solutions exist requires exploring an exponentially large space of assignments. While the Valiant-Vazirani Theorem directly doesn't answer SAT vs COUNTSAT, it tells us that if you can solve SAT in P, then NP = RP. This shows how even restricted versions of SAT are hard unless we were able to largely collapse categories, e.g. NP = RP. So the existence of unique solutions doesn't really simplify the counting aspect of COUNTSAT.}
+
+\end{enumerate}
+
+\end{document}
+\item
+
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
