@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 06, MORALLY Due March 24} 
+
+
+\begin{enumerate}
+
+\item
+(0 points)
+What is your name.
+\textbf{Gurkeerat Singh}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item
+(25 points) 
+In this problem we will guide you through the proof that the following set
+is infinite
+
+$$X=\{ p \colon p\equiv 3 \pmod 4 \hbox{ and $p$ is prime } \}.$$
+
+We begin the proof for you but you will need to finish it. 
+
+{\it 
+Assume $X$ is finite. So let $X=\{p_1,\ldots,p_k\}$. 
+
+Let
+
+$N= 4p_1p_2\cdots p_k - 1$
+
+If $N$ is prime then you have found a prime NOT on the list. You are done!
+
+If $N$ is not prime then let $N=q_1^{a_1}\cdots q_m^{a_m}$. 
+where $q_1,\ldots,q_m$ are primes. } 
+
+YOU NEED TO SHOW THAT at least one of the $q_i$ is $\equiv 3 \pmod 4$. 
+
+\textbf{Since any number that has a factor of 4 is 0 mod 4, N is 3 mod 4. Looking at the prime factorization of N, each q has to be either 1 mod 4 or 3 mod 4, since the only other option is 2 mod 4, which would not be prime unless for the prime 2, but 2's cannot be a factor of N since N is odd. Therefore, we know that q's are limited to being either 3 mod 4 or 1 mod 4. If all q's were 1 mod 4, then N would be 1 mod 4 as well, but we know this is not true since we already proved that N is 3 mod 4. Therefore, we have a contradiction and at least one of the q's must be 3 mod 4, meaning there is a prime existing which is 3 mod 4 and not on the list, showing that the set is infinitely big.}
+
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item
+(25 points)
+Let $a_n$ be defined as follows
+
+$a_0=1$
+
+$a_1=100$
+
+$(\forall n\ge 2)[a_n = a_{n-1} + 3a_{n-2}]$
+
+Find INTEGERS $A,B$ such that
+
+$(\forall n\ge 0)[a_n \le AB^n].$
+
+Try to make $B$ as small as possible .
+
+\textbf{This recurrence can be best described by an exponential function like $r^n = r^{n-1} + 3r^{n-2}$. Dividing everything by $r^{n-2}$, we get $r^2 = r + 3$. Therefore, we can find the roots of this equation to get $r = \frac {1 \pm \sqrt{13}} {2}$. The larger root of these will control how the function grows, and the larger root is approximately 2.3, so we can choose B to be the smallest integer larger than this root, which is B = 3. Plugging the b value into the base cases, we see that A is approximately 33.3, so we can choose A to be 34. Then, assuming that $a_{n-1} \le A3^{n-1}$ and $a_{n-2} \le A3^{n-2}$, we can show that $a_n = a_{n-1} + 3a_{n-2} \le A3^{n-1} + 3A3^{n-2} = A3^n$, since $A3^{n-1}$ can be written as a term of $A3^{n-2}$, that side of the equation is equal to $6A3^{n-2}$ which is equal to $2/3A3^{n}$. Since 2/3 is less than 1, the inequality holds}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+
+\item 
+(25 points) 
+(This is the Honors Problem from HW04 BUT you will now do it 
+rigorously with induction!)
+
+By the {\it Four Color Theorem} every planar graph is 4 colorable.
+You may use this. 
+
+A graph has {\it crossing number $c$} if there is a way
+to draw it so that if you REMOVE $c$ edges, the graph is planar.
+
+Prove the following by induction. So give a Base Case, an Induction Hypothesis,
+and an Induction step.
+
+{\it Every graph of crossing number $c$ is $c+4$-colorable.} 
+
+\begin{itemize}
+    \item \textbf{Every graph with crossing number c can be 4+C colored. The base case is when c = 0, which means the graph is already planar and therefore is 4 colorable. For the induction hypothesis, we assume that every graph with crossing number c can be colored with 4+c colors. For the induction step, take a graph with crossing number c+1. By definition, there is a way to draw this graph such that if we remove c+1 edges, the graph becomes planar. We remove one of these edges to get a graph with crossing number c, which we already proved through our induction hypothesis can be colored with 4+c colors. Now we add back the edge we removed, which can only connect two vertices at most, and will only conflict with at most 2 colors. We can color this new edge with a different color, meaning that the max colors would be 4+c+1, which is equal to 4+(c+1), proving the induction step and the statement.}
+\end{itemize}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+
+
+
+
+\item
+(25 points) In this problem we guide you through a proof that number of the
+form $4^n(8k+7)$ cannot be written as the sum of 3 squares. 
+
+\begin{enumerate}
+\item
+(0 points but you will need this for later)
+Find the following set 
+
+$$X = \{ x^2 \pmod 8 \colon x\in \{0,1,2,3,4,5,6,7\}\}.$$
+\begin{itemize}
+    \item \textbf{Set contains 0, 1, 4.}
+\end{itemize}
+\item
+(0 points, this is more of a review of what you've already seen) 
+Show that if $x\equiv 7 \pmod 8$ then $x$ is NOT the sum of three squares. 
+Also, we need this later for the base case. 
+
+\item
+(10 points) 
+Prove that if $x^2+y^2+z^2 \equiv 0 \pmod 4$ then $x,y,z$ are all even. 
+
+{\it Hint:} Prove the contrapositive.
+\begin{itemize}
+    \item \textbf{We can prove the contrapositive by trying to prove that if either one of x, y, z is odd, then the sum of the squares is not 0 mod 4. Any even number squared is 0 mod 4, and any odd number squared is 1 mod 4. So if at least one of x, y, z is odd, the sum of the squares will be at least 1 mod 4, and it can at max be 3 mod 4 if all three are odd, but it can never get back to 0 mod 4, so the contrapositive is true. Therefore the original statement is true.}
+\end{itemize}
+
+
+\item
+(15 points) 
+Prove the following by induction on $n$. 
+
+{\bf Theorem} Let $n\ge 0$. Let $k\in\N$. Show that $4^n(8k+7)$ cannot be written
+as the sum of 3 squares. 
+
+(Hint: Use Part 3.) 
+\begin{itemize}
+    \item \textbf{The base case is when n is equal to 0. When this occurs, the $4^n$ term is equal to 1, and we're just left with some multiple of 8 plus 7, which was provied in part 2 to not be able to be written as the sum of three squares. For the induction hypothesis, we can assume that for some n greater than or equal to 0, and for some k which is part of the set of natural numbers, $4^n(8k+7)$ can't be written as the sum of 3 squares. We induct and try to prove that $4^{n+1}(8k+7)$ can't be written as the sum of 3 squares. This expression can be rewritten as $4(4^n(8k+7))$. For the sake of contradiction, assume that this expression CAN be written as the sum of three squares. Further, since a 4 exists as a factor, it can be written in the form of part c, and each number is even, it can be written with a coefficient of 2. Squaring this for each term gives us a coefficient of 4 outside the whole term, meaning that the 4 can cancel with the left side' expression, leaving us with $4^n(8k+7) = x^2 + y^2 + z^2$. Yet, since we provied in our induction hypothesis that $4^n(8k+7)$ can't be written as the sum of three squares, we have a contradiction, meaning that our assumption that $4^{n+1}(8k+7)$ can be written as the sum of three squares is false, and therefore $4^{n+1}(8k+7)$ can't be written as the sum of three squares, proving the induction step and the statement.}
+\end{itemize}
+
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item 
+(0 points Extra Credit)
+\begin{enumerate}
+\item
+Give a complete prove of the following theorem: 
+
+{\it $\{ n \colon \hbox{$n$ is prime and } n\equiv 1 \pmod 4 \}$ is infinite.}
+
+The proof must be understandable to the students taking 250H. See next item. 
+
+{\bf Permission} I doubt you can do this without looking it up, so feel
+free to look it up. The important this is that you {\it understand} the
+proof and can explain it.
+
+\item
+Make up slides in LaTeX to prove the theorem above. I may ask you to
+present it to the class. (If you don't want to, then I might.) 
+
+\end{enumerate} 
+
+\end{enumerate}
+
+\end{document}
+

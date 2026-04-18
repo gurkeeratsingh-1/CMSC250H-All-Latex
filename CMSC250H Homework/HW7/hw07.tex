@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 07, MORALLY Due April 7} 
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+\textbf{Gurkeerat Singh}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item
+(50 points)
+\begin{enumerate}
+\item
+(0 points) 
+(You may want to write a program to get data.)
+
+$(a,b,c)$ means the NIM game where you can remove $a$ or $b$ or $c$ stones.
+
+Below the condition XXX will be of the form
+
+\bigskip
+
+$n\equiv a_1,a_2,\ldots,a_k \pmod m.$
+
+\bigskip
+
+\item 
+(7 points) 
+Fill in the XXX:
+
+{\it In the game $(1,3,5)$, Player II wins when the game begins with $n$ stones iff  $XXX(n)$.} 
+\begin{itemize}
+    \item \textbf{Solution: Player II wins when the game begins with $n$ stones iff $n\equiv 0,2 \pmod 8.$}
+\end{itemize}
+
+\item
+(7 points) 
+Fill in the XXX:
+
+{\it In the game $(1,4,6)$, Player II wins when the game begins with $n$ stones iff  $XXX(n)$.} 
+\begin{itemize}
+    \item \textbf{Solution: Player II wins when the game begins with $n$ stones iff $n\equiv 0,2 \pmod 5.$}
+\end{itemize}
+
+\item
+(7 points) 
+Fill in the XXX:
+
+{\it In the game $(1,5,7)$, Player II wins when the game begins with $n$ stones iff  $XXX(n)$.} 
+\begin{itemize}
+    \item \textbf{Solution: Player II wins when the game begins with $n$ stones iff $n\equiv 0 \pmod 2.$}
+\end{itemize}
+
+\item
+(7 points) 
+Fill in the XXX:
+
+{\it In the game $(1,6,8)$, Player II wins when the game begins with $n$ stones iff  $XXX(n)$.}
+\begin{itemize}
+    \item \textbf{Solution: Player II wins when the game begins with $n$ stones iff $n\equiv 0,2,4 \pmod 7.$}
+\end{itemize} 
+
+\item
+(22 points) 
+Fill in the XXX
+
+{\it In the game $(1,m,m+2)$, Player II wins when the game begins with $n$ stones iff  $XXX(n,m)$.} 
+\begin{itemize}
+    \item \textbf{Solution: Player II wins when the game begins with $n$ stones iff $n\equiv 0,2,4,\ldots,2(m-1) \pmod{2m+1}.$}
+\end{itemize}
+
+\end{enumerate} 
+
+\vfill
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(50 points) 
+Let $a\in\N$.  Consider the recurrence
+
+$T_a(0)=10$
+
+$T_a(n) = 2T(\floor{\frac{n}{2}}) + an$.
+
+\begin{enumerate}
+\item
+(0 points) 
+Write a program that will, given $a$, output
+
+$T_a(0)$, $T_a(1)$, $\ldots$, $T_a(1000)$. 
+
+\item 
+(0 points) 
+Run the program for $1\le a\le 20$. 
+
+\item
+(50 points) Using your data make a conjecture along the lines of:
+
+$T_a(n)$ is roughly $XXX(a,n)$
+
+(For example, $T_a(n) = a^2n^3$ which is NOT the answer.) 
+\begin{itemize}
+    \item \textbf{Solution: $T_a(n)$ is roughly $an\log n$.}
+\end{itemize}
+\end{enumerate}
+
+
+\end{enumerate} 
+
+\end{document}

@@ -1,0 +1,386 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 05, MORALLY Due March 03} 
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(40 points)
+For this problem FIRST write the program and make conjectures THEN
+look up whats true. 
+
+A prime $p$ such that $p$ and $\frac{p-1}{2}$ are both prime is called a {\it safe prime} 
+
+\begin{enumerate}
+\item
+(0 points) 
+Write a program that will, given a number $n$,
+test if $n$ is prime, using the naive algorithm
+of testing if $2,3,4,\ldots,\ceil{\sqrt{n}}$ divides $n$.
+(Do not hand anything in.)
+\item
+(0 points)
+Write a program that will, given a number $n$,
+test if both $n$ and $\frac{n-1}{2}$ are prime
+(use the program in Part 1). 
+(Do not hand anything in.)
+\item
+(4 points)
+Find the following numbers
+\begin{itemize}
+\item
+The number of primes in $\{1,\ldots,10000\}$. The number of safe primes.
+\item
+The number of primes in $\{1,\ldots,20000\}$. The number of safe primes. 
+\item
+$\vdots$
+\item
+The number of primes in $\{1,\ldots,200000\}$. The number of safe primes.
+\end{itemize}
+Hand in a table of the following form--- we give the first two lines and they
+are likely incorrect. 
+
+\begin{tabular}{|c|c|c|}
+\hline
+$n$  & Numb of Primes in $\{1,\ldots,n\}$ & Numb of Safe Primes in $\{1,\ldots,n\}$\cr
+\hline
+10,000 & 100 & 10 \cr
+20,000 & 200 & 20 \cr
+\hline
+\end{tabular}
+\vspace{5cm}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+\hline
+10,000  & 1,229   & 115   \\
+20,000  & 2,262   & 190   \\
+30,000  & 3,245   & 265   \\
+40,000  & 4,203   & 326   \\
+50,000  & 5,133   & 391   \\
+60,000  & 6,057   & 446   \\
+70,000  & 6,935   & 501   \\
+80,000  & 7,837   & 565   \\
+90,000  & 8,713   & 618   \\
+100,000 & 9,592   & 670   \\
+110,000 & 10,453  & 721   \\
+120,000 & 11,301  & 777   \\
+130,000 & 12,159  & 826   \\
+140,000 & 13,010  & 878   \\
+150,000 & 13,848  & 921   \\
+160,000 & 14,683  & 978   \\
+170,000 & 15,497  & 1,032 \\
+180,000 & 16,342  & 1,071 \\
+190,000 & 17,170  & 1,121 \\
+200,000 & 17,984  & 1,171 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\item 
+(8 points) 
+It is known that the number of primes $\le n$ is ROUGHLY $\frac{n}{\ln n}$. 
+Using your data make a conjecture about what the value of $A$ is such that
+the number of primes is around $\frac{An}{\ln n}$. 
+\begin{itemize}
+    \item \textbf{Based on the data, the value of A is around 1.1. We can use the formula and plug in different values for n and primes to find an approximation for A, which approaches 1 as n approaches infinity.}
+\end{itemize}
+\item
+(8 points)
+Find some function $f(n)$ so that the following statement fits your data pretty well:
+
+{\it The number of safe primes $\le n$ is roughly $f(n)$ } 
+\begin{itemize}
+    \item \textbf{$f = 0.88n / (\ln n)^2$}.
+    \item \textbf{We got this by first using the definition of a safe prime to deduct that the formula would be B / the square of ln n, since you have to account for both of the numbers being prime. After that, we can just plug in different values for n and the number of safe primes to find an approximation for B, which approaches 0.88 as n approaches infinity.}
+\end{itemize}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE FOR THE REST OF THIS PROBLEM}
+
+\newpage
+
+\item 
+(0 points) Write a program that will, given $p$, $g$, 
+
+a) Test if $p$ is a safe prime. If not then output NO.
+
+b) ($p$ is a safe prime) Test if $g$ is a generator (see slides). 
+
+(Do not hand anything in)
+
+
+\item 
+(4 points) 
+Find the first 20 safe primes after 100,000. Call them $p_1,\ldots,p_{20}$. 
+Hand them in.
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|r|}
+\hline
+$p_1$ & $p_2$ & $p_3$ & $p_4$ \\
+\hline
+100043 & 100103 & 100523 & 100547 \\
+\hline
+$p_5$ & $p_6$ & $p_7$ & $p_8$ \\
+\hline
+100823 & 100847 & 101027 & 101183 \\
+\hline
+$p_9$ & $p_{10}$ & $p_{11}$ & $p_{12}$ \\
+\hline
+101483 & 101747 & 101939 & 101987 \\
+\hline
+$p_{13}$ & $p_{14}$ & $p_{15}$ & $p_{16}$ \\
+\hline
+102407 & 103007 & 103043 & 103079 \\
+\hline
+$p_{17}$ & $p_{18}$ & $p_{19}$ & $p_{20}$ \\
+\hline
+103319 & 103787 & 104207 & 104243 \\
+\hline
+\end{tabular}
+\end{table}
+
+\item
+(8 points) 
+Hand in a table of the following form documenting the first 20 safe primes.
+We give the first two lines.
+We assume the first two safe primes over 100,000 are 100,001 and 100,003
+(this might not be true).
+
+\begin{tabular}{|c|c|c|}
+\hline
+$p$  & Numb of generators in $\{1,\ldots,p\}$ & fraction that are gen \cr 
+\hline
+100,001 & 20,000 & 0.199\cr
+100,003 & 21,000 & 0.210\cr
+\hline
+\end{tabular}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|r|r|r|}
+\hline
+$p$ & Number of generators in $\{1, \dots, p\}$ & Fraction that are generators \\
+\hline
+100043 & 50020 & 0.500 \\
+100103 & 50050 & 0.500 \\
+100523 & 50260 & 0.500 \\
+100547 & 50272 & 0.500 \\
+100823 & 50410 & 0.500 \\
+100847 & 50422 & 0.500 \\
+101027 & 50513 & 0.500 \\
+101183 & 50590 & 0.500 \\
+101483 & 50740 & 0.500 \\
+101747 & 50873 & 0.500 \\
+101939 & 50969 & 0.500 \\
+101987 & 50992 & 0.500 \\
+102407 & 51103 & 0.500 \\
+103007 & 51502 & 0.500 \\
+103043 & 51520 & 0.500 \\
+103079 & 51539 & 0.500 \\
+103319 & 51658 & 0.500 \\
+103787 & 51893 & 0.500 \\
+104207 & 52092 & 0.500 \\
+104243 & 52110 & 0.500 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\item 
+(8 points) 
+Based on your data make a conjecture of the following form:
+For large safe primes $p$, the number of generators in $\{1,\ldots,p\}$
+is $\alpha p$ where $\alpha$ is \bf 0.5
+
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item
+(30 points) 
+This problem has six parts.
+However, the first three are worth 0.
+Do them but don't hand them in.
+They are a review of what we did in class briefly. 
+\begin{enumerate}
+\item
+(0 points---Do not hand in)
+Compute the following mod 8: 
+$0^2, 1^2,\ldots, 7^2$.
+\item 
+(0 points---Do not hand in)
+Use Part 1 to find {\bf all} sums of 3 squares mod 8. 
+\item
+(0 points---Do not hand in)
+Use Part 2 to 
+prove that there are an infinite number of
+natural numbers that cannot be written as
+the sum of 3 squares.
+\item
+(10 points) 
+Compute the following mod 16: 
+$0^4, 1^4,\ldots, 15^4$.
+\begin{itemize}
+    \item \textbf{Between 0, 16, since any even number is at least 2 or some multiple of two, this means that they are all multiples of 16, therefore all even numbers from 0 to 15 mod 16 are 0. For odd numbers, they can be expressed as 2k+1 for some integer k, and 2k+1 squared = $4k^2 + 4k + 1$ which = $4k(k+1) + 1$. Since we know that one of k+1 or k is even, k(k+1) is even, so 4k(k+1) has to be divisible by 8. If odd numbers squared mod 8 are 1, squaring this again would give you $1^2$ mod 16 which is equal to 1. So all odd numbers between 0 and 15 are equal to 1. Therefore, the fourth powers of numbers between 0 and 15 mod 16 are 0 for even numbers and 1 for odd numbers.} 
+\end{itemize}
+\item
+(10 points) 
+Use Part 4 to find {\bf all} sums of 15 fourth powers mod 16. 
+\begin{itemize}
+    \item \textbf{Since a number to the 4th power mod 16 is either 0 or 1, this means that if we add 15 of these, we can get any sum between 0 and 15. Therefore, any remainder mod 16 is possible. }
+\end{itemize}
+\item
+(10 points) 
+Use Part 5 to
+prove that there are an infinite number of
+natural numbers that {\bf cannot} be written as
+the sum of 15 fourth powers.
+\begin{itemize}
+    \item \textbf{Let's choose some number N that is that is the sum of 15 4th powers and is 15 mod 16. Therefore, each 4th power has to be odd. But if we look for each odd number mod 32, they have to be either 1 or 17, alternating between the two. So that works. But for even numbers that are raised to the 4th power, N mod 16 would be 0 since each 4th power contributes 0. Therefore, we can write N as 16 times each $y_i$ if $x_i == 2y_i$ for some integer $y_i$. So to the 4th, we would get a factor of 16 for each y, which can be taken out of the sum. Dividing the sum by 16 would give us N/16, which is also then represented as the sum of 15th 4th powers. Now assume we have some number M that isn't representable by 15th 4th powers. If we multiply M by 16, we would get a number that also isn't representable by 15th 4th powers, because if it was, we could divide it by 16 and also get a number M which is represented by 15 4th powers, which contradicts our initial condition for M. Therefore, there an infinite number of numbers that can't be represented by by the sum of 15th 4th powers.}
+\end{itemize}
+\end{enumerate}
+
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item
+(30 points)
+
+
+\begin{enumerate}
+\item
+(15 points) 
+Find a set $\D\subseteq\R$ such that the following all hold:
+
+\begin{itemize}
+\item
+Every element $x\in \D$ has both a successor element $\succc(x)$ (so $x<\succc(x)$ 
+and there is nothing strictly between $x$ and $\succc(x)$)
+and a predecessor element $\pred(x)$ (so $\pred(x)<x$ and there is nothing strictly
+inbetween $\pred(x)$ and $x$). 
+\item 
+There exists $x,y\in\D$ such that:  
+
+i) $x<y$ and 
+
+ii) $\succc(x)\ne y$, $\succc(\succc(x))\ne y$, $\ldots$. 
+
+\item \textbf{The set Z of the integers satisfies this. We just need a set that is not dense between elements (which the integers satisify) and one where there is some pair of elements with a gap of at least 3. The set of integers satisfies this for any x and y = x+3.}
+
+\end{itemize}
+
+
+\item
+(15 points) 
+Find a set $\D\subseteq\R$ such that the following all hold:
+
+\begin{itemize}
+\item
+Every element $x\in \D$ has both a successor element $\succc(x)$ (so $x<\succc(x)$ 
+and there is nothing strictly between $x$ and $\succc(x)$)
+and a predecessor element $\pred(x)$ (so $\pred(x)<x$ and there is nothing strictly
+inbetween $\pred(x)$ and $x$). 
+\item 
+There exists an infinite number of pairs $(x_1, y_1), (x_2, y_2), \ldots \in D$ such that,
+for all $i\in\N$: 
+
+1)  $x_1 < y_1$ and $\succc(x_1) \neq y_1$, $\succc(\succc(x_1)), \neq y_1, \ldots$ 
+ 
+2) $x_2 < y_2$ and $\succc(x_2) \neq y_2$, $\succc(\succc(x_2)), \neq y_2, \ldots$  \\ \vdots
+
+i) $x_i < y_i$ and $\succc(x_i) \neq y_i$, $\succc(\succc(x_i)), \neq y_i, \ldots$ \\ \vdots
+
+and so on 
+
+\item \textbf{Once again, the set Z of integers satisifies this. We need a set where every element has a successor and predecessor, and there are infinitely many pairs of elements where the gap between elements is at least 3. As the set of integers is not dense and it is infinite, it satisfies this condition.}
+
+\end{itemize}
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item 
+(Honors Homework which you must do)
+Leo showed that every planar graph is 5-colorable.
+It is known that every planar graph is 4-colorable
+(this was a hard result).
+
+A graph has {\it crossing number $c$} if there is a way
+to draw it so that if you REMOVE $c$ edges, the graph is planar.
+
+Planar graphs have crossing number 0.
+
+For each of the statements fill in the FILL IN and prove the
+result. 
+
+You may use that every planar graph is 4-colorable. 
+
+\begin{enumerate}
+\item
+Every graph that has crossing number 1 can be XXX-colored.
+\begin{itemize}
+    \item \textbf{XXX is 5. 5-Colorable means that at worst, you need 5 colors to color the graph in the way where no two adjacent vertices have the same color. So, if a graph has crossing number 1, it means that by removing one edge, the graph becomes planar. Since every planar graph is 4-colorable, the original graph can be colored with at most 5 colors (the 4 colors for the planar part and one additional color for the vertex that was connected by the removed edge).}
+\end{itemize}
+
+\item
+Every graph that has crossing number 17 can be YYY-colored.
+\begin{itemize}
+    \item \textbf{YYY is 21. 21-Colorable means that at worst, you need 21 colors to color the graph in the way where no two adjacent vertices have the same color. If a graph has crossing number 17, it means that by removing 17 edges, the graph becomes planar. Since every planar graph is 4-colorable, the original graph can be colored with at most 4 colors for the planar part and one additional color for each of the 17 edges that were removed (to account for the vertices connected by those edges). Therefore, you would need at most 4 + 17 = 21 colors to color the original graph.}
+\end{itemize}
+
+\item
+Every graph that has crossing number $c$ can be $f(c)$-colored.
+(You need to find the function $f$.)
+\begin{itemize}
+    \item \textbf{Every graph with crossing number c can be 4+C colored. This is because if a graph has crossing number c, by removing c edges, the graph can become planar. And since we already know that every planar graph is 4 colorable, we can color that part with 4 colors, and then for each added vertice, add a color if needed if the color matches some adjacent vertice. In the worst case, we would need 4 colors for the planar graph and one additional color for each edge, making 4 + C colors. Therefore, f(c) = 4+c.}
+\end{itemize}
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+

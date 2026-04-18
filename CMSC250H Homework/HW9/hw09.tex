@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 09, MORALLY Due April 21} 
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(35 points) 
+
+Read or re-read the slides on the Horse Numbers. 
+The numbers $H(n)$ will come up in this problem.
+
+For $n\ge 2$.
+Let $I(n)$ be the number of ways that $n$ horses, $x_1,\ldots,x_n$, 
+
+\noindent
+can finish a race (so orderings with equalities allowed) that have $x_1<x_n$. 
+
+\begin{enumerate}
+\item
+(0 points but you should do it or convince yourself that you could). 
+What is $I(2)$, $I(3)$, $I(4)$. Do $I(4)$ in such a way that it can be
+generalized to $I(n)$. 
+\item
+(30 points) 
+Give a recurrence for $I(n)$. It may also involve $H(n)$. For example, it could be
+
+$$I(n) = I(n-1)H(n-1) + 2I(n-2)H(n-2) + \cdots + (n-1)I(n-(n-1))H(n-(n-1)).$$
+
+\end{enumerate}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(35 points)
+
+There are 30 people taking Game Theory.
+
+There are 30 people taking Ramsey Theory.
+
+There are 30 people taking Artificial Intelligence (AI).
+
+There are 10 taking Game theory AND Ramsey Theory.
+
+There are 10 taking Game theory AND AI.
+
+There are 10 taking Ramsey Theory AND AI. 
+
+There are 5 taking all three classes. 
+
+\begin{enumerate}
+\item 
+How many students are there? 
+\item
+How many students are taking Game Theory AND Ramsey Theory but NOT AI?
+\end{enumerate}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item 
+(30 points-10 points each)
+
+(This problem is based on material you will see Wednesday April 15.) 
+
+
+Consider the equation: $w+x+y+z=100.$
+
+\begin{enumerate}
+\item 
+How many solutions $(w,x,y,z)$ are there with $w,x,y,z\ge 0$?
+
+\item
+How many solutions $(w,x,y,z)$ are there with $w,x,y,z\ge 5$?
+
+\item
+How many solutions $(w,x,y,z)$ with $w\ge 1$ and $x\ge 10$? 
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
+

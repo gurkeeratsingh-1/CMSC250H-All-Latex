@@ -1,0 +1,273 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 05, MORALLY Due March 10} 
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+\begin{itemize}
+    \item \textbf{Gurkeerat Singh}
+\end{itemize}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item
+(40 points)
+\begin{enumerate}
+\item
+(0 points) 
+Write a program that will, given $p,g,a,b$ computes the following:
+
+$g^a \pmod p$, $g^b \pmod p$, $g^{ab} \pmod p$
+
+(The intended input is that $p$ is a prime and $g$ is a generator;
+however, the program still works if this is not the case.)
+Do not hand anything in.
+
+\item 
+(20 points) 
+Alice and Bob are carrying out the Diffie-Helman Protocol with $p=521$ and $g=3$.
+Output a table of the following form where you generate the 50 $(a,b)$'s at random. 
+We give the first 3 rows of what the table might look like.
+Note that the numbers are fictional and you may have different
+pairs then we have. 
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$a$ & $b$ & Alice Sends $3^a$ & Bob Sends $3^b$ & Secret $3^{ab}$ \cr
+\hline
+2   &   17  &   33              &    191           &    330         \cr
+33  &   44  &   55              &    200           &    40          \cr
+18  &  344  &   500             &    201           &    47          \cr
+\hline
+\end{tabular}
+
+How often does each secret occur?
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$a$ & $b$ & Alice Sends $3^a$ & Bob Sends $3^b$ & Secret $3^{ab}$ \\
+\hline
+60 & 181 & 503 & 218 & 492 \\
+3 & 447 & 27 & 504 & 297 \\
+69 & 392 & 507 & 490 & 309 \\
+487 & 230 & 120 & 407 & 415 \\
+11 & 338 & 7 & 474 & 47 \\
+474 & 410 & 250 & 52 & 197 \\
+366 & 53 & 296 & 15 & 83 \\
+454 & 91 & 333 & 356 & 144 \\
+441 & 280 & 303 & 284 & 255 \\
+324 & 105 & 416 & 75 & 100 \\
+225 & 503 & 334 & 409 & 307 \\
+123 & 223 & 412 & 95 & 269 \\
+203 & 141 & 262 & 82 & 147 \\
+431 & 214 & 502 & 271 & 188 \\
+401 & 379 & 439 & 413 & 67 \\
+49 & 368 & 444 & 59 & 495 \\
+469 & 46 & 209 & 248 & 263 \\
+437 & 17 & 216 & 414 & 330 \\
+220 & 178 & 100 & 394 & 226 \\
+510 & 202 & 447 & 261 & 503 \\
+231 & 208 & 179 & 104 & 104 \\
+357 & 312 & 455 & 516 & 25 \\
+271 & 343 & 514 & 41 & 428 \\
+40 & 106 & 422 & 225 & 423 \\
+91 & 118 & 356 & 36 & 474 \\
+132 & 342 & 31 & 361 & 450 \\
+397 & 356 & 282 & 499 & 468 \\
+288 & 125 & 228 & 61 & 324 \\
+55 & 347 & 135 & 195 & 446 \\
+511 & 278 & 299 & 321 & 198 \\
+326 & 430 & 97 & 341 & 99 \\
+503 & 439 & 409 & 381 & 158 \\
+302 & 254 & 370 & 263 & 212 \\
+274 & 309 & 332 & 77 & 403 \\
+191 & 53 & 335 & 15 & 112 \\
+177 & 201 & 305 & 87 & 23 \\
+474 & 475 & 250 & 229 & 447 \\
+153 & 329 & 159 & 14 & 146 \\
+427 & 478 & 167 & 452 & 313 \\
+516 & 366 & 238 & 296 & 22 \\
+301 & 166 & 297 & 118 & 248 \\
+441 & 328 & 303 & 352 & 457 \\
+482 & 277 & 142 & 107 & 242 \\
+172 & 231 & 57 & 179 & 88 \\
+503 & 352 & 409 & 495 & 283 \\
+238 & 398 & 202 & 325 & 398 \\
+210 & 318 & 415 & 2 & 100 \\
+454 & 498 & 333 & 319 & 468 \\
+322 & 370 & 162 & 10 & 503 \\
+408 & 505 & 411 & 34 & 324 \\
+\hline
+\end{tabular}
+\vspace{1cm}
+\textbf{The majority of secrets occur only once, but some secrets occur multiple times.}
+
+
+\item
+(20 points) 
+Alice and Bob are carrying out the Diffie-Helman Protocol with $p=521$ and $g=43$.
+Output a table of the following form where you generate  50 $(a,b)$'s at random
+(they can and will be different from the $(a,b)$'s you used on the problem 2b). 
+We give the first 3 rows of what the table might look like.
+Note that the numbers are fictional and you may have different
+pairs then we have. 
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$a$ & $b$ & Alice Sends $43^a$ & Bob Sends $43^b$ & Secret $43^{ab}$ \cr
+\hline
+7   &   29  &   37              &    391           &    130         \cr
+13  &   14  &   15              &    100           &    10          \cr
+98  &  349  &   509             &    291           &    97          \cr
+\hline
+\end{tabular}
+
+How often does each secret occur?
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$a$ & $b$ & Alice Sends $43^a$ & Bob Sends $43^b$ & Secret $43^{ab}$ \\
+\hline
+24 & 162 & 1 & 286 & 1 \\
+319 & 233 & 206 & 43 & 206 \\
+331 & 434 & 315 & 286 & 235 \\
+261 & 288 & 478 & 1 & 1 \\
+512 & 390 & 1 & 235 & 1 \\
+273 & 389 & 43 & 478 & 478 \\
+327 & 101 & 206 & 478 & 315 \\
+177 & 190 & 43 & 235 & 235 \\
+255 & 396 & 206 & 520 & 520 \\
+117 & 301 & 478 & 478 & 43 \\
+68 & 27 & 520 & 315 & 520 \\
+19 & 382 & 315 & 235 & 286 \\
+485 & 455 & 478 & 206 & 315 \\
+279 & 371 & 206 & 315 & 478 \\
+99 & 380 & 315 & 520 & 520 \\
+96 & 242 & 1 & 286 & 1 \\
+322 & 157 & 286 & 478 & 286 \\
+99 & 6 & 315 & 235 & 286 \\
+80 & 171 & 1 & 315 & 1 \\
+457 & 288 & 43 & 1 & 1 \\
+423 & 248 & 206 & 1 & 1 \\
+101 & 442 & 478 & 286 & 286 \\
+159 & 264 & 206 & 1 & 1 \\
+481 & 14 & 43 & 235 & 235 \\
+472 & 134 & 1 & 235 & 1 \\
+89 & 425 & 43 & 43 & 43 \\
+297 & 24 & 43 & 1 & 1 \\
+175 & 65 & 206 & 43 & 206 \\
+254 & 410 & 235 & 286 & 520 \\
+436 & 421 & 520 & 478 & 520 \\
+151 & 348 & 206 & 520 & 520 \\
+420 & 320 & 520 & 1 & 1 \\
+370 & 405 & 286 & 478 & 286 \\
+459 & 458 & 315 & 286 & 235 \\
+63 & 362 & 206 & 286 & 235 \\
+315 & 481 & 315 & 43 & 315 \\
+106 & 228 & 286 & 520 & 1 \\
+270 & 388 & 235 & 520 & 1 \\
+45 & 349 & 478 & 478 & 43 \\
+467 & 38 & 315 & 235 & 286 \\
+471 & 155 & 206 & 315 & 478 \\
+408 & 330 & 1 & 286 & 1 \\
+360 & 316 & 1 & 520 & 1 \\
+338 & 367 & 286 & 206 & 235 \\
+356 & 183 & 520 & 206 & 520 \\
+401 & 394 & 43 & 286 & 286 \\
+96 & 164 & 1 & 520 & 1 \\
+135 & 427 & 206 & 315 & 478 \\
+78 & 471 & 235 & 206 & 286 \\
+65 & 291 & 43 & 315 & 315 \\
+\hline
+\end{tabular}
+\vspace{1cm}
+\textbf{While we saw 1 appear as the secret over 10 times, many other secrets also appered 5-7 times each. This is due to the larger generator which can not create as many collisions as the smaller generator.}
+
+\item 
+(0 points, do not hand anything in)
+Does one of the $g$ values seem better than the other?
+(The answer will be YES)
+Why is one better than the other?
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item 
+(30 points)
+\begin{enumerate}
+\item
+(10 points)
+Prove that $10^{1/3}$ is irrational WITHOUT USING unique factorization. 
+\begin{itemize}
+    \item \textbf{Let's use a proof by contradiction and assume that $10^{1/3}$ is rational. Then we can write it as $\frac ab$ where a and b are both integers with no factors in common. This means that $10 = \frac {a^3}{b^3}$ and therefore, $a^3 = 10b^3$. Further, since $a^3$ is divisible by 10, $a$ is also divisible by 10, meaning $a$ can be written as $10k$ for some integer k. Substituting this back into the equation, we have $1000k^3 = 10b^3$. This can be simplified by dividing by 10, which gives us $100k^3 = b^3$. However, since we were able to divide by 10, this means that $b^3$, and therefore $b$ is divisible by 10. If 10 divides b and 10 also divides a, this means that our origianal expression $\frac ab$ was not in simplest form, which contradicts what we assumed.}
+\end{itemize}
+\item
+(10 points)
+Prove that $10^{1/3}$ is irrational USING unique factorization. 
+\begin{itemize}
+    \item \textbf{Let's use a proof by contradiction and assume that $10^{1/3}$ is rational. Then we can write it as $\frac ab$ where a and b are both integers with no factors in common. This means that $10 = \frac {a^3}{b^3}$ and therefore, $a^3 = 10b^3$. Further, since $a^3$ is divisible by 10, $a$ is also divisible by 10, meaning $a$ can be written as $10k$ for some integer k. Since $a$ is a cube root, all of its prime factorizations, including 10 will be multiples of 3, so the exponent of 10 in a is 3k for some integer k. On the other side of the equals sign, $b^3$ will also carry 10 as a factor with an exponent of 3m for some integer m as b is also cubed. However, multiplying by 10, we get a total exponent of 3m + 1 for 10 on the right hand side. This is a contradiction as the exponent of 10 on the left hand side is a multiple of 3 and the exponent of 10 on the right hand side is not a multiple of 3. Therefore, $10^{1/3}$ must be irrational.}
+\end{itemize}
+\item
+(10 points)
+Prove $101^{1/4}$ is irrational USING unique factorization
+\begin{itemize}
+    \item \textbf{Let's use a proof by contradiction and assume that $101^{1/4}$ is rational. Then we can write $101^{1/4}$ as $\frac ab$ where a and b are both integers with no factors in common. This means that $101 = \frac {a^4}{b^4}$ and therefore, $a^4 = 101b^4$. Since $a^4$ is divisible by 101, $a$ is also divisible by 101, meaning that $a$ can be written as $101k$ for some integer k. Since $a$ is a fourth root, all of its prime factorizations, including 101 will be multiples of 4, so the exponent of 101 in a is 4k for some integer k. On the other side of the equals sign, $b^4$ will also carry 101 as a factor with an exponent of 4m for some integer m as b is also fourth powered. However, multiplying by 101, we get a total exponent of 4m + 1 for 101 on the right hand side. This is a contradiction as the exponent of 101 on the left hand side is a multiple of 4 and the exponent of 101 on the right hand side is not a multiple of 4. Therefore, $101^{1/4}$ must be irrational.}
+\end{itemize}
+\item
+(0 points, don't hand anything in) 
+Would the proof that $101^{1/4}$ have been longer or shorter if you
+did it WITHOUT USING unique factorization.
+\end{enumerate}
+
+\vfill
+
+\centerline{\bf GO TO NEXT PAGE}
+
+\newpage
+
+\item 
+(30 points) Prove that, for every prime $p$, $p^{1/3}$ is irrational.
+Use Unique Factorization.
+\begin{itemize}
+    \item \textbf{We can use a proof by contradiction.Assume $p^{1/3}$ is rational. It can be written as $\frac ab$ and therefore $p = \frac{a^3}{b^3}$. This means that we can write $a^3 = pb^3$. Since $p$ is prime, it must divide $a^3$ and therefore it must divide $a$. Since $a$ is a cube root, all of its prime factorizations, including p will be multiples of 3, so the exponent of p in a is 3k for some integer k. On the other side of the equals sign, $b^3$ will also carry p as a factor with an exponent of 3m for some integer m as b is also cubed. However, multiplying by p, we get a total exponent of 3m + 1 for p on the right hand side. This is a contradiction as the exponent of p on the left hand side is a multiple of 3 and the exponent of p on the right hand side is not a multiple of 3. Therefore, $p^{1/3}$ must be irrational.}
+\end{itemize}
+\end{enumerate}
+
+\end{document}
+
