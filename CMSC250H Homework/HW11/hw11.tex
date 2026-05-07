@@ -1,0 +1,214 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 11, MORALLY Due May 5} 
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+\textbf{Gurkeerat Singh}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item
+(30 points) 
+There are two coins. 
+
+\begin{itemize}
+\item
+One is fair so the probability of H and T are both $\frac{1}{2}$. 
+\item
+One is biased so the probability of H is $\frac{1}{3}$ and the probability of T is $\frac{2}{3}$. 
+\end{itemize}
+
+Bill will take one not-quite-at-random!
+Here is what Bill does: He picks the fair coin with probability $\frac{9}{10}$
+and the biased coin with  probability $\frac{1}{10}$. 
+
+\begin{enumerate}
+\item
+(15 points)
+Bill flips the coins $n$ times and they are all H. 
+What is the the probability that the coin is biased (as a function of $n$)? 
+\begin{itemize}
+    \item \textbf{Since we want $P(B | H_n)$, we can use Bayes' theorem to calculate it as $\frac{(P(H_n | B))(P(B))}{P(H_n)}$. We know that $P(B)$ is $1/10$, $P(F)$ is $9/10$, $P(H_n | B)$ is $(1/3)^n$, $P(H_n | F)$ is $(1/2)^n$. So we can calculate $P(H_n)$ as $(1/3)^n (1/10) + (1/2)^n (9/10)$. So, $P(B | H_n) = \frac{(1/3)^n (1/10)}{(1/3)^n (1/10) + (1/2)^n (9/10)}$} 
+\end{itemize}
+\item 
+(15 points)
+(You might want to write a program for this one.) 
+We want a table of $n$ and the probability of bias if there are $n$ H's. 
+We want the table to go from $n=1$ to $n=20$. 
+The format of the table should be as follows (we only give the first
+3 rows and the numbers are made up.).
+Real numbers should be to 4 places. 
+
+\begin{tabular}{|c|l|}
+\hline
+$n$ & the probability of Bias given $H^n$ \cr 
+\hline
+1   & 0.5101\cr
+2   & 0.631 \cr
+3   & 0.6799 \cr
+\hline
+\end{tabular} 
+\[
+\begin{array}{|c|c|}
+\hline
+n & P(B\mid H^n) \\
+\hline
+1  & 0.0690 \\
+2  & 0.0471 \\
+3  & 0.0320 \\
+4  & 0.0215 \\
+5  & 0.0144 \\
+6  & 0.0096 \\
+7  & 0.0064 \\
+8  & 0.0043 \\
+9  & 0.0029 \\
+10 & 0.0019 \\
+11 & 0.0013 \\
+12 & 0.0008 \\
+13 & 0.0006 \\
+14 & 0.0004 \\
+15 & 0.0002 \\
+16 & 0.0002 \\
+17 & 0.0001 \\
+18 & 0.0001 \\
+19 & 0.0000 \\
+20 & 0.0000 \\
+\hline
+\end{array}
+\]
+\end{enumerate}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item 
+(30 points) 
+\begin{enumerate}
+\item
+(15 points) 
+Fill in the following sentence and prove it using the Pigeon hole Principle:
+{\it Let $A$ be a subset of $\{1,\ldots,1000\}$ such that $|A|=300$. 
+Then there are at least XXX subsets of $A$ that have the same sum.
+(Give XXX both as a combinatorial thing like $\ceil{\frac{2^{100}}{87}}$ (thats not
+the answer!) and as an actual number like 55 (thats not the answer, or if it is then
+thats an accident).} 
+\begin{itemize}
+    \item \textbf{$\ceil{\frac{2^{300}}{300001}}$}
+    \item \textbf{$\sim6.79(10^{84})$}
+    \item \textbf{Since there are 300 elements in the set, each element has the choice of being or not being in a subset, meaning that there are $2^{300}$ possible subsets of |A|. Then, we know that each element's max is 1000, so the max sum is 300000, and since the lowest possible sum is for an empty set (0), there are 300001 possible sums of A. So dividing the possible subsets by the possible sums, we get $\ceil{\frac{2^{300}}{300001}}$.}
+\end{itemize}
+\item
+(15 points) 
+Fill in the following sentence and prove it using the Pigeon hole Principle:
+{\it Let $A$ be a subset of $\{-500,\ldots,500\}$ such that $|A|=300$. 
+Then there are at least YYY subsets of $A$ that have the same sum.
+(Give XXX both as a combinatorial thing like $\ceil{\frac{2^{100}}{87}}$ (thats not
+the answer!) and as an actual number like 55 (thats not the answer, or if it is then
+thats an accident).} 
+\begin{itemize}
+    \item \textbf{$\ceil{\frac{2^{300}}{300001}}$}
+    \item \textbf{$\sim6.79(10^{84})$}
+    \item \textbf{Since there are 300 elements in the set, each element has the choice of being or not being in a subset, meaning that there are $2^{300}$ possible subsets of |A|. Then, we know that each element's max is 500, so the max sum is 150000, and since the lowest possible sum is -150000, there are 300001 possible sums of A. So dividing the possible subsets by the possible sums, we get $\ceil{\frac{2^{300}}{300001}}$.}
+\end{itemize}
+
+\item
+(0 points) 
+Which is bigger XXX or YYY? Is there an intuition for that? 
+\end{enumerate}
+
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(40 points)
+Let $a,b,c\ge 2$. 
+
+Let $R_2(a,b)$ be the least number $n$ so that, no matter how you 2-color
+(with R,B) the edges of $K_n$ you will either get a RED $K_a$ or a BLUE $K_b$.
+(This was called $R(a,b)$ in the lecture.)
+
+
+Let $R_3(a,b,c)$ be the least number $n$ so that, no matter how you 3-color
+(with R,B,G) the edges of $K_n$ you will either get a RED $K_a$ or a BLUE $K_b$
+or a GREEN $K_c$. 
+
+\begin{enumerate}
+
+\item
+(20 points)
+Show that, for all $a,b,\ge 2$, $R_3(a,b,2)=R_2(a,b)$.
+\begin{itemize}
+    \item \textbf{A green $K_2$ is equivalent to a single green edge, so if there is no green $K_2$, there is no green edge at all, which effectively collapses our 3-coloring to a 2-coloring. So, for all $a,b,\ge 2$, $R_3(a,b,2)=R_2(a,b)$.}
+\end{itemize}
+
+\item
+(20 points)
+Show that, for all $a,b,c\ge 3$, 
+
+$R(a,b,c) \le R(a,b,c-1) + R(a,b-1,c) + R(a-1,b,c)$. 
+\begin{itemize}
+    \item \textbf{Let N = $R(a,b,c-1) + R(a,b-1,c) + R(a-1,b,c)$. If we consider any 3-coloring of $K_N$, and pick some vertex v, we can partiition the remaining N-1 vertices into 3 different sets based on the color of the edge connecting to v as R,B,G for their respective colors. So $|R| + |B| + |G|$ = N-1. Now, for proof by contradiction, assume that all 3 of the following inequalities failed. $|R| < R_3(a-1, b, c)$. $|B| < R_3(a, b-1, c)$. $|G| < R_3(a, b, c-1)$. Adding them gives $|R| + |B| + |G| < R_3(a-1, b, c) + R_3(a, b-1, c) + R_3(a, b, c-1)$. But this contradicts the fact that $|R| + |B| + |G| = N-1$., since that right hand side was initially equal to N. So, at least one of the inequalities holds. We can go case by case, and each case is isomorphic, so we'll prove one and apply continuity to the rest. Assuming that $|R| >=  R_3(a-1, b, c).$, then within R there is either a red $K_{a-1}$, blue $K_b$, or green $K_c$. If blue or green, we're done, but if red, then adding the red edge from R by definition of R produces a red $K_a$. So, we're good. This continuity applies to all 3 cases for R, B, and G. Thus every 3-coloring of $K_N$ contains a monochromatic $K_a$, $K_b$, or $K_c$.}
+\end{itemize}
+
+\end{enumerate}
+
+\item
+(0 points but its extra credit)
+
+This problem depends on the Muffin Lecture. 
+
+\begin{enumerate}
+\item
+Show that $f(22,13)\le \frac{21}{52}$. 
+(Uses Half Method)
+\item
+Show that $f(33,20)\le \frac{41}{100}$. 
+(Uses Interval Method) 
+\end{enumerate}
+
+MAKE YOUR PROOFS READABLE: use interval diagrams. 
+
+\end{enumerate}
+
+\end{document}
+

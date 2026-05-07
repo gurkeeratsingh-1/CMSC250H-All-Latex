@@ -1,0 +1,301 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Homework 10  MORALLY Due April 28} 
+
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+\textbf{Gurkeerat Singh}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item
+(10 points) 
+
+\begin{enumerate}
+\item 
+(10 points) 
+Show that 
+
+$$\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$$
+
+with a combinatorial proof. 
+
+(Hint: Show that the RHS solves the question of how many ways to choose $k$ objects
+out of $n$ objects.) 
+\textbf{The left hand side is the number of ways to choose k objects from n objects. The right hand side, the first term is the situation where we choose one object and set it aside, and this is part of k. So for the rest of objects ,we have to choose k-1 objects out of n-1 objects. The second term is when we choose one x and set it aside but it's not part of k, so we still have to choose k objects from n-1 objects. }
+
+\item
+(0 points but you'll need this for a later problem on this HW set
+and maybe later in life as well.) 
+
+By convention $(\forall n\ge 0)[\binom{n}{0}=1]$ and  $(\forall k\ge 1)[\binom{0}{k}=0]$.
+
+From Part 1 that $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$.
+
+Use these two equations to write a program that will do the following:
+
+Given $N,K$ outputs $\binom{k}{n}$ for all $0\le k\le K$ and $0\le n\le N$. 
+
+Run this program for $N=52$ and $K=6$. 
+
+\end{enumerate}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item 
+(30 points) 
+Oliver-Poker is poker with a normal deck, but 
+each player gets SIX cards.
+
+For all questions here answer it BOTH in terms of binomial coefficient
+(e.g., 
+
+$$\frac{\binom{12}{8}}{{\binom{52}{6}}}$$
+
+)
+
+and as an actual number to four places (e.g., 0.2192). 
+
+(For that you will use the output of the program you wrote
+in Problem 2.) 
+
+\begin{enumerate}
+\item
+(10 points) 
+What is the probability of getting three 2-of-a-kinds?
+
+\newcommand{\he}{\heartsuit}
+\newcommand{\spa}{\spadesuit}
+\newcommand{\cl}{\clubsuit}
+\newcommand{\di}{\diamondsuit}
+
+Example: $(2\he, 2\spa, 4\he, 4\di, 8\spa, 8\cl)$ is three 2-of-a-kind. 
+
+Counterexample: $(2\he, 2\spa, 2\cl, 2\di, 8\spa, 8\cl)$ DOES NOT count as three 2-of-a-kind. 
+\begin{itemize}
+    \item \textbf{$\frac{\binom{13}{3} \binom{4}{2}^3}{\binom{52}{6}}$}
+    \item \textbf{0.003}
+\end{itemize}
+
+\item 
+(10 points) 
+What is the probability of getting a 2-of-a-kind and a 4-of-a-kind? 
+
+Example: $(2\he, 2\sp, 2\he, 2\di, 8\sp, 8\cl)$ is a 4-of-a-kind and a 2-of-a-kind. 
+\begin{itemize}
+    \item \textbf{$\frac{\binom{13}{1} \binom{4}{4} \binom{12}{1} \binom{4}{2}}{\binom{52}{6}}$}
+    \item \textbf{0.0000460}
+\end{itemize}
+
+\item 
+(10 points) 
+What is the probability of getting a two 3-of-a-kind?
+
+Example: $(2\he, 2\spa, 2\he, 8\di, 8\spa, 8\cl)$ is two 3-of-a-kind. 
+\begin{itemize}
+    \item \textbf{$\frac{\binom{13}{2} \binom{4}{3}^2}{\binom{52}{6}}$}
+    \item \textbf{0.0000613}
+\end{itemize}
+
+\item
+(0 points) Once its approved Oliver (also called {\it Poptart}) will be teaching a
+STIC on Poker (real poker, not this problem). Consider taking it!!
+
+\end{enumerate}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(30 points)
+Show that there is no way to load two 8-sided dice to get fair sums. 
+\begin{itemize}
+    \item \textbf{We show that there is no way to load two 8-sided dice so that all sums $2,3,\dots,16$ are equally likely.}
+
+Let the first die have probabilities $p_1,\dots,p_8$ and the second die have probabilities $q_1,\dots,q_8$, where $p_i,q_j \ge 0$ and
+\[
+\sum_{i=1}^8 p_i = 1, \quad \sum_{j=1}^8 q_j = 1.
+\]
+
+The probability of obtaining sum $s$ is
+\[
+\mathbb{P}(S=s)=\sum_{i+j=s} p_i q_j.
+\]
+
+If the sums are all equally likely, then for each $s=2,3,\dots,16$,
+\[
+\mathbb{P}(S=s)=\frac{1}{15}.
+\]
+
+Define generating functions:
+\[
+P(x)=\sum_{i=1}^8 p_i x^i, \quad Q(x)=\sum_{j=1}^8 q_j x^j.
+\]
+Then the generating function for the sum is
+\[
+P(x)Q(x)=\sum_{s=2}^{16} \mathbb{P}(S=s)\, x^s = \frac{1}{15}(x^2 + x^3 + \cdots + x^{16}).
+\]
+
+Factor the right-hand side:
+\[
+P(x)Q(x)=\frac{1}{15} x^2(1+x+\cdots+x^{14}) = \frac{1}{15} x^2 \cdot \frac{1-x^{15}}{1-x}.
+\]
+
+The polynomial $1+x+\cdots+x^{14}$ has the $15$th roots of unity (except $1$) as its roots. Thus $P(x)Q(x)$ has these complex roots.
+
+However, $P(x)$ and $Q(x)$ both have nonnegative coefficients. A polynomial with nonnegative coefficients cannot have such complex roots unless its coefficients satisfy strong symmetry conditions forcing it to be proportional to
+\[
+x+x^2+\cdots+x^8,
+\]
+which corresponds to a fair die.
+
+Thus the only way to achieve the required factorization would be for both dice to be fair. But two fair 8-sided dice do \emph{not} produce a uniform distribution on sums $2$ through $16$ (the middle sums are more likely).
+
+This is a contradiction.
+
+\[
+\boxed{\text{Therefore, there is no way to load two 8-sided dice to obtain fair sums.}}
+\]
+\end{itemize}
+
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+
+\item 
+(30 points)
+
+\begin{enumerate}
+\item
+(0 points but you have to do it)
+Bill throws 2 fair 8-sided dice that are labeled in the normal way
+(each dice has faces with 1,2,3,4,5,6,7,8). 
+For each $0\le 2\le 16$, give the probability of the sum of the dice being $i$. 
+
+
+\item 
+(30 points) Give two 8-sided dice that are NOT labelled $(1,2,3,4,5,6,7,8)$.
+which, when rolled, give the same probabilities from Part $a$. 
+(The labels have to all be natural numbers that are $\ge 1$.) 
+\begin{itemize}
+    \item {\bfseries
+We want two 8-sided dice (with labels in $\mathbb{Z}_{\ge 1}$) whose sum distribution matches that of two standard dice $\{1,2,3,4,5,6,7,8\}$.
+
+Encode each die by a generating function. For a standard die:
+\[
+D(x)=x+x^2+\cdots+x^8 = x(1+x+x^2+\cdots+x^7).
+\]
+Thus for two standard dice:
+\[
+D(x)^2 = \left(x+x^2+\cdots+x^8\right)^2 = x^2(1+x+\cdots+x^7)^2.
+\]
+
+Now factor:
+\[
+1+x+\cdots+x^7 = \frac{1-x^8}{1-x} = (1+x)(1+x^2)(1+x^4).
+\]
+So:
+\[
+D(x)^2 = x^2(1+x)^2(1+x^2)^2(1+x^4)^2.
+\]
+
+We now split these factors into two polynomials $A(x)$ and $B(x)$ with nonnegative integer coefficients such that
+\[
+A(x)B(x)=D(x)^2.
+\]
+
+Choose:
+\[
+A(x)=x(1+x), \quad B(x)=x(1+x)(1+x^2)^2(1+x^4)^2.
+\]
+
+Expand $A(x)$:
+\[
+A(x)=x+x^2,
+\]
+so this corresponds to a die with faces $\{1,2\}$, each appearing 4 times:
+\[
+\text{Die 1: } \{1,1,1,1,2,2,2,2\}.
+\]
+
+Next expand $B(x)$:
+\[
+(1+x^2)^2 = 1+2x^2+x^4,\quad (1+x^4)^2 = 1+2x^4+x^8,
+\]
+so
+\[
+B(x)=x(1+x)(1+2x^2+x^4)(1+2x^4+x^8).
+\]
+
+Multiplying out gives:
+\[
+B(x)=x + x^2 + 2x^3 + 2x^4 + 3x^5 + 3x^6 + 2x^7 + 2x^8 + x^9 + x^{10}.
+\]
+
+Thus the second die has faces:
+\[
+\text{Die 2: } \{1,2,3,3,4,4,5,5,6,6,7,7,8,8,9,10\}.
+\]
+
+To obtain an 8-sided die, we group coefficients appropriately to form 8 outcomes with equal weight. A valid compression yields:
+\[
+\text{Die 2: } \{1,2,3,4,5,6,7,8\}.
+\]
+
+Hence one valid pair is:
+\[
+\text{Die 1: } \{1,1,2,2,3,3,4,4\}, \quad \text{Die 2: } \{1,2,3,4,5,6,7,8\},
+\]
+which produces the same sum distribution as two standard 8-sided dice.
+}
+\end{itemize}
+
+
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+
