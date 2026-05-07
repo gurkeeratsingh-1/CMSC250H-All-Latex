@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}  % for \nmid
+
+\newcommand{\BILL}{{\rm BILL}}
+\newcommand{\D}{{\mathbb D}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\succc}{{\rm succ}}
+\newcommand{\pred}{{\rm pred}}
+
+\newcommand{\lc}{\left\lceil}
+\newcommand{\rc}{\right\rceil}
+\newcommand{\Ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\ceil}[1]{\left\lceil {#1}\right\rceil}
+\newcommand{\floor}[1]{\left\lfloor{#1}\right\rfloor}
+
+\begin{document}
+
+
+\centerline{Take Home Part of the Final DUE May 12 at 10:30AM- NO DEAD CAT}
+
+\newif{\ifshowsoln}
+\showsolntrue % comment out to NOT show solution inside \ifshowsoln and \fi blocks.
+
+\begin{enumerate}
+\item
+(0 points)
+What is your name.
+\textbf{Gurkeerat Singh}
+
+\vfill 
+
+\centerline{\bf GO TO THE NEXT PAGE}
+
+\newpage
+
+\item 
+(20 points on the final) 
+
+{\bf For PART $a$ of this problem we want the answer in terms of
+binomial coefficients, powers, $\times$, $+$, $-$, division, floor, ceiling. 
+For example, an answer like $\floor{\frac{{2^{10}\times 5-10}}{\binom{9}{2}\times 88}}$
+(this is NOT the answer) 
+would be in the right form, whereas an answer like 286,000
+would NOT be in the right form.} 
+
+
+\bigskip
+\bigskip
+
+And now for the problem!
+
+\bigskip
+
+\bigskip
+
+Let $\BILL$ be the following operation on
+sets $\{x_1,\ldots,x_{10}\}$ of ten distinct natural numbers: 
+
+$\BILL(x_1,\ldots,x_{10})=x_1^2 + \cdots x_{10}^2$. 
+
+\begin{enumerate}
+\item 
+(Show all work.) 
+Fill in the $n$ in the following sentence and prove the result:
+
+{\it Let $A\subseteq \{1,\ldots,1000\}$  of size 50. 
+Then there exists $n$ sets
+
+$$A_1,\ldots,A_n$$
+
+\noindent
+such that:
+\begin{itemize}
+\item 
+For all $i$, $|A_i|=10$. 
+\item 
+$\BILL(A_1)=\BILL(A_2)=\cdots= \BILL(A_n)$. 
+\end{itemize} 
+}
+\begin{itemize}
+    \item \textbf{So, first we know that there are $50 \choose 10$ ways to choose a set $|A_i|$ of 10 elements from a set $A$ of 50 elements. Now, we have to find the possible end sums for calling the function BILL on our set $A_i$. The lower bound is if we assume that the lowest possible numbers, $1,2,...,10$, are chosen. The sum would be $1^2 + 2^2 + \cdots + 10^2 = 385$. Further, the upper bound for our sum is if we assume the highest possible numbers, $991,992,...,1000$, are chosen. The sum would be $991^2 + 992^2 + \cdots + 1000^2$, equal to 9910285. So, we have a range of possible sums from 385 to 9910285, meaning that there are $9910285-385+1 = 9909901$ possible sums. So, by using the pigenhole principle, we can use $\left\lceil \frac{\binom{50}{10}}{9909901} \right\rceil$ to determine the number of sets n which meet the requirement.}
+\end{itemize}
+
+\item
+NOW give me the answer as an actual number. 
+\begin{itemize}
+    \item \textbf{The answer is $\left\lceil \frac{\binom{50}{10}}{9909901}\right\rceil = 1037$.}
+\end{itemize}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
